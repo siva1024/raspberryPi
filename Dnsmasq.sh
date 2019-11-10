@@ -1,5 +1,5 @@
 # Install dnsmasq.
-sudo apt-get install dnsmasq
+sudo apt-get install dnsmasq -y
 
 
 # Assign eth0 an IP address. Open /etc/dhcpcd.conf with a text editor and add this at the bottom.
