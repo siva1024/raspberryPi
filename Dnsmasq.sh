@@ -22,4 +22,4 @@ iptables -t nat -A  POSTROUTING -o wlan0 -j MASQUERADE
 sudo reboot.
 
 #checking the status of Dnsmasq
-sudo service dnsmasq status
+# sudo service dnsmasq status
