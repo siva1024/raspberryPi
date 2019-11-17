@@ -3,8 +3,11 @@ sudo apt-get install dnsmasq -y
 
 
 # Assign eth0 an IP address. Open /etc/dhcpcd.conf with a text editor and add this at the bottom.
-interface eth0
-static ip_address=192.168.4.1/24
+# interface eth0
+# static ip_address=192.168.4.1/24
+
+sudo sed '/^#/!s#interface eth0#interface eth0\nstatic ip_address=192.168.4.1/24#' /etc/dhcpcd.conf
+
 
 # Save original dnsmasq.conf
 sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
