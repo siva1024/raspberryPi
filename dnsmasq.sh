@@ -14,6 +14,7 @@ else
         echo "installing the package"
         sudo apt-get install dnsmasq -y
 fi
+echo "Done"
 echo " "
 
 
@@ -31,6 +32,7 @@ else
     echo "the configuration is not set, updating the configuration"
     sudo sed -i '/^#/!s#interface eth0#interface eth0\nstatic ip_address=192.168.4.1/24#' /etc/dhcpcd.conf
 fi
+echo "Done"
 echo " "
 
 
@@ -54,6 +56,7 @@ echo "Overwriting the configuration of the dnsmasq.conf file"
 sudo touch /etc/dnsmasq.conf
 sudo bash -c 'echo "interface=eth0" > /etc/dnsmasq.conf'
 sudo bash -c 'echo "dhcp-range=192.168.4.8,192.168.4.250,255.255.255.0,12h" >> /etc/dnsmasq.conf'
+echo "Done"
 echo " "
 
 
@@ -70,6 +73,7 @@ else
     echo "the configuration is not set, updating the configuration"
     sudo sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/' /etc/sysctl.conf
 fi
+echo "Done"
 echo " "
 
 
@@ -86,11 +90,14 @@ else
     echo "the configuration is not set, updating the configuration"
     sudo sed -i 's/.*exit 0.*/iptables -t nat -A  POSTROUTING -o wlan0 -j MASQUERADE\n&/' /etc/rc.local
 fi
+echo "Done"
 echo " "
 
 
 
 #Reboot the system after 1 min
+echo "######################################################"
+echo "Will reboot the system in 1 min"
 sudo shutdown -r +1
 
 #checking the status of Dnsmasq
