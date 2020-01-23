@@ -95,3 +95,6 @@ sudo shutdown -r +1
 
 #checking the status of Dnsmasq
 #sudo service dnsmasq status
+
+#Show the connected members
+#cat /var/lib/misc/dnsmasq.leases
