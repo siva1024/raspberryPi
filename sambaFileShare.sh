@@ -27,3 +27,9 @@ sudo service smbd restart
 
 # Create a user Samba user
 sudo smbpasswd -a <User_name>
+
+# List all users in samba
+sudo pdbedit -L -v
+
+# Delete a user Name in samba
+smbpasswd -x <User_name>
