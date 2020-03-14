@@ -31,14 +31,11 @@ function checkNum {
 function storageDetails {
     if $( sudo fmt -1 /etc/fstab | grep -qxF "${path}" ) ; then
         echo "Selected path ${path} already exists in the configuration file"
+    elif $( sudo fmt -1 /etc/fstab | grep -qxF "UUID=${uuid}" ) ; then
+        echo "Selected UUID - ${uuid} already exists in the configuration file"
+    else
+        sudo sed -i '$ a '"UUID=${uuid} ${path} ${mountType}"' defaults,nofail 0 0' /etc/fstab
     fi
-#    if grep -Fxq "UUID=${uuid}" /etc/fstab
-#        echo "Selected UUID ${uuid} already exists in the configuration file"
-#    then
-#        echo "exists"
-
-    # <UUID> /nas "<TYPE>" defaults,nofail 0 0 
-    sudo sed -i '$ a '"UUID=${uuid} ${path} ${mountType}"' defaults,nofail 0 0' /home/pi/test  #/etc/fstab
 }
 
 function mounting {
