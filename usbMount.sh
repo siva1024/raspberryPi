@@ -53,7 +53,7 @@ function mounting {
     echo "UUID = ${uuid}"
     echo "TYPE = ${mountType}"
     storageDetails
-    
+    sudo mount -a
 }
 
 lsblk
