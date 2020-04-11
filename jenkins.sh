@@ -5,5 +5,8 @@ sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sour
 sudo apt update
 sudo apt install jenkins
 
+# Mondify /etc/default/jenkins file
+# JENKINS_ARGS="--webroot=/var/cache/jenkins/war --httpPort=$HTTP_PORT --prefix=/jenkins"
+
 systemctl status jenkins
 

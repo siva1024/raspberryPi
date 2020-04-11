@@ -45,9 +45,9 @@ echo "Checking for the backuo of dnsmasq.conf file"
 
 if [ -f /etc/dnsmasq.conf.orig ]
 then
-	echo "The dnsmasq backup is already present"
+    echo "The dnsmasq backup is already present"
 else
-	echo "The dnsmasq backup is not found making  backup of file"
+    echo "The dnsmasq backup is not found making  backup of file"
     sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
 fi
 echo "Overwriting the configuration of the dnsmasq.conf file"
